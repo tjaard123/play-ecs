@@ -1,4 +1,13 @@
+# Build image
+FROM microsoft/aspnetcore-build AS builder
+WORKDIR /source
+COPY *.csproj .
+RUN dotnet restore
+COPY . .
+RUN dotnet publish --output /app/ --configuration Release
+
+# Runtime image
 FROM microsoft/aspnetcore
 WORKDIR /app
-COPY bin/Debug/netcoreapp1.1/publish .
+COPY --from=builder /app .
 ENTRYPOINT ["dotnet", "web.dll"]
