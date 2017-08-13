@@ -28,7 +28,7 @@ docker build -t play-ecs .
 docker run play-ecs -p 80:80
 ```
 
-5. Browse to http://<public-ip>
+5. Browse to http://\<public-ip>
 
 ## Guides & Links
 * I found the official AWS [ECS guide](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html) & [ECR guide](http://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_GetStarted.html) to be pretty good
@@ -49,7 +49,7 @@ Options:
 1. Tried mounting a local drive and simply do docker run with -v but can't get to sharing the drive on Windows or linux.  This can be done with a compose as well but trying to keep it light weight.  Maybe mounting has too much dependency on OS
 
 ## AWS SSH
-Use private key from AWS keypair and connect to ec2-user@<public-ip>
+Use private key from AWS keypair and connect to ec2-user@\<public-ip>
 
 ## Dotnet core docker images
 microsoft/dotnet image is the base image
