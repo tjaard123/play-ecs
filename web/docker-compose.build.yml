@@ -7,12 +7,3 @@ services:
       - .:/src
     working_dir: /src
     command: /bin/bash -c "dotnet restore ./web.csproj && dotnet publish ./web.csproj -c Release -o ./obj/Docker/publish"
-
-
-docker run -it -v $(PWD):/app --workdir /app microsoft/aspnetcore-build bash -c "dotnet restore && dotnet publish -c Release -o ./bin/Release/PublishOutput"
-
-docker run -it -v .:/app --workdir /app microsoft/aspnetcore-build bash -c "dotnet restore && dotnet publish -c Release -o ./bin/Release/PublishOutput"
-
-
-
-docker run --rm -v c:/Users:/data alpine ls /data
