@@ -2,6 +2,8 @@
 
 This is a simple web app to experiment with the basics, no scalability considered, yet...
 
+## Getting Started
+
 1. Install AWS CLI & Terraform
 2. Create AWS account, create user and retrieve credentials.  AWS CLI Credentials are stored in ~/.aws/credentials
 3. Create AWS infrastructure via terraform from ./infrastructure.  Get public IP as output
@@ -35,9 +37,22 @@ docker run play-ecs -p 80:80
 * Greate [end to end article](https://blog.gruntwork.io/an-introduction-to-terraform-f17df9c6d180), also introduces scalability 
 * [Amazon in plain english]( https://www.expeditedssl.com/aws-in-plain-english)
 
-## Avoid SSH
+## TODO
 
-TODO
+* ECS infrastructure as code - getting the ec2s linked to cluster and boot up via cloud config
+* Automate build & avoid SSH - this might be best done with an image. But where do you prepare and build the image?  Another server or something should publish and push working image to ECR?
+* An actual app...
+* VPC, maybe using community terraform as in [this tutorial]((http://vilkeliskis.com/articles/bootstrapping-docker-infrastructure-with-terraform))
+
+## Infrastructure
+
+Busy with this, currently following [this](http://vilkeliskis.com/articles/bootstrapping-docker-infrastructure-with-terraform) and [this](http://blog.shippable.com/create-a-container-cluster-using-terraform-with-aws-part-1)
+
+* Default VPC
+* Security groups to allow HTTPS, SSH and outbound traffic
+* ECS cluster with ec2 instances
+* Task definitions for images
+* Service to create task instances
 
 ## Building the dotnet core app, automatically
 Need to build and publish the dotnet app.  Dotnet has an image specifically for build.
